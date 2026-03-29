@@ -258,7 +258,7 @@ Logic: Q1 is the primary router. Q3 and Q4 break ties. Q2 (stage) is stored but 
 4. Secondary CTA: `See all 10 ARMs →` (Tertiary text-only, links to `/arms`)
 5. **Opt-in form (inline, below CTAs):**
    - Label: "Want your personalized VPG playbook emailed to you?" (Inter 400, 11px, `rgba(245,240,232,0.5)`)
-   - Fields: Email input (single field, placeholder: "your@email.com")
+   - Fields: Email input (single field) — `background: rgba(255,255,255,0.05); border: 1px solid rgba(245,240,232,0.15); border-radius: 3px; padding: 9px 14px; color: #F5F0E8; font: Inter 400 12px; placeholder-color: rgba(245,240,232,0.3); caret-color: #E8541A; focus: border-color rgba(245,240,232,0.4), outline none; width: 100%` — placeholder: "your@email.com"
    - CTA: `Send my playbook` (Primary Tier button, smaller: padding 8px 16px)
    - Skip: `No thanks, I'll explore on my own →` (Tertiary text-only, `rgba(245,240,232,0.3)`, font-size 10px)
    - If skip: Go directly to ARM page
