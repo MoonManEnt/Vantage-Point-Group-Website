@@ -29,3 +29,22 @@ describe('Design tokens', () => {
     expect(css).toContain('--font-inter')
   })
 })
+
+describe('Font setup', () => {
+  it('app/fonts.ts exists and exports clashDisplay and inter', () => {
+    const fs = require('fs')
+    expect(fs.existsSync('app/fonts.ts')).toBe(true)
+    const content = fs.readFileSync('app/fonts.ts', 'utf8')
+    expect(content).toContain('clashDisplay')
+    expect(content).toContain('inter')
+    expect(content).toContain('--font-clash')
+    expect(content).toContain('--font-inter')
+  })
+
+  it('layout.tsx applies both font variables to html element', () => {
+    const fs = require('fs')
+    const content = fs.readFileSync('app/layout.tsx', 'utf8')
+    expect(content).toContain('clashDisplay.variable')
+    expect(content).toContain('inter.variable')
+  })
+})

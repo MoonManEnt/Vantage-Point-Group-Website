@@ -22,7 +22,8 @@
   --bg-surface: #111a26;   /* elevated sections  */
   --bg-footer:  #0a1118;   /* footer — darkest   */
 
-  /* Font family tokens (populated by next/font in Task 3) */
+  /* Font family tokens — fallback stacks used in CSS.
+     next/font injects --font-clash and --font-inter as CSS vars at runtime via className on <html>. */
   --font-clash: "Helvetica Neue", Arial, sans-serif;
   --font-inter: system-ui, -apple-system, sans-serif;
 
