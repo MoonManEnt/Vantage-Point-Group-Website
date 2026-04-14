@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { clashDisplay, inter } from './fonts'
 import './globals.css'
+import { Navigation } from '@/components/nav/Navigation'
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +26,10 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only">
           Skip to main content
         </a>
-        {children}
+        <Navigation />
+        <main id="main-content" className="flex flex-col flex-1">
+          {children}
+        </main>
       </body>
     </html>
   )
