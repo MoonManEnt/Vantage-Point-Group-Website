@@ -59,6 +59,10 @@ export function Navigation() {
   }, [])
 
   const handleNavMouseLeave = useCallback(() => {
+    if (hoverTimerRef.current !== null) {
+      clearTimeout(hoverTimerRef.current)
+      hoverTimerRef.current = null
+    }
     closeMegaRef.current()
   }, [])
 
@@ -75,7 +79,6 @@ export function Navigation() {
     }
   }, [])
 
-  const closeMega = useCallback(() => setMegaOpen(false), [])
   const closeMobile = useCallback(() => setMobileOpen(false), [])
   const openMobile = useCallback(() => setMobileOpen(true), [])
 
@@ -203,7 +206,7 @@ export function Navigation() {
         </div>
 
         {/* MegaMenu — rendered inside header, below the bar */}
-        <MegaMenu isOpen={megaOpen} onClose={closeMega} />
+        <MegaMenu isOpen={megaOpen} onClose={closeMegaRef.current} />
       </header>
 
       {/* MobileOverlay — sibling to header */}
