@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ARMS } from '@/lib/arm-data'
 
@@ -10,6 +10,8 @@ interface MegaMenuProps {
 }
 
 export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     if (!isOpen) return
     const handler = (e: KeyboardEvent) => {
@@ -19,8 +21,20 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
     return () => document.removeEventListener('keydown', handler)
   }, [isOpen, onClose])
 
+  useEffect(() => {
+    if (!isOpen) return
+    const handler = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        onClose?.()
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [isOpen, onClose])
+
   return (
     <div
+      ref={containerRef}
       role="menu"
       aria-hidden={!isOpen}
       className={[

@@ -30,4 +30,16 @@ describe('MegaMenu', () => {
     fireEvent.keyDown(document, { key: 'Escape' })
     expect(onClose).toHaveBeenCalledOnce()
   })
+
+  it('calls onClose when clicking outside the menu', () => {
+    const onClose = vi.fn()
+    render(
+      <div>
+        <MegaMenu isOpen={true} onClose={onClose} />
+        <button data-testid="outside">outside</button>
+      </div>
+    )
+    fireEvent.mouseDown(screen.getByTestId('outside'))
+    expect(onClose).toHaveBeenCalledOnce()
+  })
 })
