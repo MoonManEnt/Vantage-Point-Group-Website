@@ -11,26 +11,28 @@ interface MegaMenuProps {
 
 export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const onCloseRef = useRef(onClose)
+  useEffect(() => { onCloseRef.current = onClose })
 
   useEffect(() => {
     if (!isOpen) return
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose?.()
+      if (e.key === 'Escape') onCloseRef.current?.()
     }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
-  }, [isOpen, onClose])
+  }, [isOpen])
 
   useEffect(() => {
     if (!isOpen) return
     const handler = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        onClose?.()
+        onCloseRef.current?.()
       }
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
-  }, [isOpen, onClose])
+  }, [isOpen])
 
   return (
     <div
@@ -57,6 +59,7 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               href={`/arms/${arm.slug}`}
               role="menuitem"
               aria-label={`ARM ${arm.id}: ${arm.name}`}
+              tabIndex={isOpen ? undefined : -1}
               className="group flex items-start gap-3 py-2.5 border-b border-[rgba(245,240,232,0.05)]
                          hover:border-[rgba(245,240,232,0.2)] transition-colors duration-150"
               {...(onClose ? { onClick: onClose } : {})}
