@@ -11,8 +11,9 @@ test.describe('Hero section', () => {
   })
 
   test('headline text is present in the DOM', async ({ page }) => {
-    await expect(page.getByText('Serious Builders.')).toBeVisible()
-    await expect(page.getByText('Ten Movements Forward.')).toBeVisible()
+    const heading = page.getByRole('heading', { level: 1 })
+    await expect(heading).toContainText(/serious builders/i)
+    await expect(heading).toContainText(/ten movements forward/i)
   })
 
   test('CTA button is visible and points to #arm-quiz', async ({ page }) => {
