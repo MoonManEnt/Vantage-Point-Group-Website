@@ -67,7 +67,7 @@ export default function HeroSection() {
         scrub: 1,
         animation: gsap.timeline()
           .to(contentRef.current,   { autoAlpha: 0, y: -40 })
-          .to(particlesRef.current, { autoAlpha: 0 }, '<50%'),
+          .to(particlesRef.current, { opacity: 0 }, '<50%'),
       })
     })
 
