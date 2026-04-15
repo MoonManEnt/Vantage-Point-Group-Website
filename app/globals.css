@@ -104,3 +104,22 @@
     outline: none;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   Particle Field — Ambient Dot Animations
+   ───────────────────────────────────────────────────────────────── */
+@keyframes particleDriftA {
+  0%, 100% { transform: translate(0, 0);       opacity: 0.7; }
+  33%       { transform: translate(8px, -10px); opacity: 1;   }
+  66%       { transform: translate(-5px, 6px);  opacity: 0.5; }
+}
+
+@keyframes particleDriftB {
+  0%, 100% { transform: translate(0, 0);        opacity: 0.5; }
+  50%       { transform: translate(-8px, -8px);  opacity: 0.9; }
+}
+
+@keyframes particleDriftC {
+  0%, 100% { transform: translate(0, 0);     opacity: 0.6; }
+  50%       { transform: translate(5px, -9px); opacity: 1;   }
+}
