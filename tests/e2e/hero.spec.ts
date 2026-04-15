@@ -23,6 +23,6 @@ test.describe('Hero section', () => {
 
   test('Mosaic V image is present', async ({ page }) => {
     const img = page.getByAltText('Mosaic V — VPG brand mark')
-    await expect(img).toBeInTheDocument()
+    await expect(img).toBeVisible()
   })
 })
