@@ -57,7 +57,9 @@ describe('QuizResult', () => {
 
   it('renders the See all 10 ARMs link', () => {
     render(<QuizResult {...defaultProps} />)
-    expect(screen.getByRole('link', { name: /see all 10 arms/i })).toBeInTheDocument()
+    const link = screen.getByRole('link', { name: /see all 10 arms/i })
+    expect(link).toBeInTheDocument()
+    expect(link).toHaveAttribute('href', '/arms')
   })
 
   it('renders the email input and submit button', () => {
