@@ -65,7 +65,7 @@ export function ARMQuiz() {
     const updated = { ...answers, [key]: optionText }
     setAnswers(updated)
 
-    const optionIndex = QUESTIONS[questionIndex].options.indexOf(optionText)
+    const optionIndex = QUESTIONS[questionIndex]!.options.indexOf(optionText)
     trackEvent('arm_quiz_question_answered', {
       question_number: questionIndex + 1,
       answer_text: optionText,
@@ -124,6 +124,7 @@ export function ARMQuiz() {
   }
 
   const q = QUESTIONS[currentQuestion]
+  if (!q) return null
 
   return (
     <div ref={containerRef}>
