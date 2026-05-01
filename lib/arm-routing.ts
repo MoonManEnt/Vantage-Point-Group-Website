@@ -1,3 +1,4 @@
+// Q2 (business stage) is intentionally absent — stored for analytics but does not affect routing.
 export function routeArm(q1: string, q3: string, q4: string): number {
   if (q1 === 'Credit + Capital Access') return 2
   if (q1 === 'Brand + Visibility') return 1
