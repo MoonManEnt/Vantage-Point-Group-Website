@@ -99,7 +99,7 @@ export const ARMS: Arm[] = [
     slug: 'integrity-partner-alliance',
     entity: 'IPA',
     color: '#3B6D11',
-    descriptor: 'Integrity Partner Alliance',
+    descriptor: 'Referral Network · Commission',
     hoverCopy: 'Refer once. Earn across all 10 arms. Build recurring income.',
     resultDescription:
       'The Integrity Partner Alliance compounds across all 10 ARMs. Refer once, earn recurring commission on every ARM you activate.',
