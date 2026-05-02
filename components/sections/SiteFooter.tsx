@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { ARMS } from '@/lib/arm-data'
 
 const ENTITY_LINKS = [
+  { name: 'Vantage Point Media', href: '/arms/vantage-point-media' },
+  { name: 'Dispute2Go', href: '/arms/dispute2go' },
   { name: 'IPA', href: '/partners' },
 ]
 

@@ -45,8 +45,9 @@ describe('SiteFooter', () => {
 
   it('renders the Dispute2Go entity link pointing to /arms/dispute2go', () => {
     render(<SiteFooter />)
-    const link = screen.getByRole('link', { name: 'Dispute2Go' })
-    expect(link).toHaveAttribute('href', '/arms/dispute2go')
+    const links = screen.getAllByRole('link', { name: 'Dispute2Go' })
+    const d2gLink = links.find((l) => l.getAttribute('href') === '/arms/dispute2go')
+    expect(d2gLink).toBeTruthy()
   })
 
   it('renders the IPA entity link pointing to /partners', () => {
