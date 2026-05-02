@@ -53,9 +53,10 @@ export function KrakenPrinciples() {
       className="grid grid-cols-1 md:grid-cols-3 gap-4"
     >
       {PRINCIPLES.map((p) => (
-        <div
+        <article
           key={p.number}
           data-principle-card
+          aria-label={`Principle ${p.number}: ${p.name}`}
           style={{
             borderLeft: `2px solid ${p.accent}`,
             paddingLeft: '12px',
@@ -95,7 +96,7 @@ export function KrakenPrinciples() {
           >
             {p.descriptor}
           </p>
-        </div>
+        </article>
       ))}
     </div>
   )

@@ -56,8 +56,8 @@ describe('KrakenPrinciples', () => {
   })
 
   it('renders exactly 6 principle cards', () => {
-    render(<KrakenPrinciples />)
-    const cards = document.querySelectorAll('[data-principle-card]')
+    const { container } = render(<KrakenPrinciples />)
+    const cards = container.querySelectorAll('[data-principle-card]')
     expect(cards.length).toBe(6)
   })
 })
