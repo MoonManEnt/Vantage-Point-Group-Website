@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeAll } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { ArmBentoGrid } from '@/components/sections/ArmBentoGrid'
 import { ARMS } from '@/lib/arm-data'
