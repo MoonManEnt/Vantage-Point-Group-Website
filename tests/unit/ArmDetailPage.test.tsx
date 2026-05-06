@@ -5,7 +5,7 @@ import { ArmDetailHero } from '@/components/arms/ArmDetailHero'
 import { CrossArmLinks } from '@/components/arms/CrossArmLinks'
 import { ARMS } from '@/lib/arm-data'
 
-const vpm = ARMS[0]
+const vpm = ARMS[0]!
 
 describe('ArmDetailHero', () => {
   it('renders the ARM name as h1', () => {
@@ -38,7 +38,7 @@ describe('CrossArmLinks', () => {
 
   it('each sibling ARM links to its /arms/[slug] path', () => {
     render(<CrossArmLinks currentSlug={vpm.slug} />)
-    const d2g = ARMS[1]
+    const d2g = ARMS[1]!
     const link = screen.getByRole('link', { name: new RegExp(d2g.name, 'i') })
     expect(link).toHaveAttribute('href', `/arms/${d2g.slug}`)
   })

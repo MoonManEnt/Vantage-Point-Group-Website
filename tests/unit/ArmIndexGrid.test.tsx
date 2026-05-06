@@ -22,6 +22,6 @@ describe('ArmIndexGrid', () => {
 
   it('renders each ARM descriptor', () => {
     render(<ArmIndexGrid arms={ARMS} />)
-    expect(screen.getByText(ARMS[0].descriptor)).toBeInTheDocument()
+    expect(screen.getByText(ARMS[0]!.descriptor)).toBeInTheDocument()
   })
 })
