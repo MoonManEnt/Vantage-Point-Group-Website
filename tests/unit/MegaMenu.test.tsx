@@ -42,4 +42,10 @@ describe('MegaMenu', () => {
     fireEvent.mouseDown(screen.getByTestId('outside'))
     expect(onClose).toHaveBeenCalledOnce()
   })
+
+  it('renders a "View all 10 ARMs" link to /arms', () => {
+    render(<MegaMenu isOpen={true} />)
+    const viewAll = screen.getByRole('link', { name: /view all 10 arms/i })
+    expect(viewAll).toHaveAttribute('href', '/arms')
+  })
 })

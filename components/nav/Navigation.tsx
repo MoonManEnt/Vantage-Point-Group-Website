@@ -9,7 +9,7 @@ import { NavCTA } from '@/components/nav/NavCTA'
 
 const NAV_LINKS = [
   { label: 'Partners', href: '/partners' },
-  { label: 'The Kraken Method', href: '/kraken-method' },
+  { label: 'The Kraken Method', href: '/about/kraken-method' },
   { label: 'Events', href: '/events' },
   { label: 'About', href: '/about' },
 ]

@@ -36,4 +36,10 @@ describe('Navigation', () => {
     render(<Navigation />)
     expect(screen.getByRole('button', { name: /open menu/i })).toBeInTheDocument()
   })
+
+  it('links The Kraken Method to /about/kraken-method', () => {
+    render(<Navigation />)
+    const link = screen.getByRole('link', { name: /the kraken method/i })
+    expect(link).toHaveAttribute('href', '/about/kraken-method')
+  })
 })

@@ -80,6 +80,17 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
             </Link>
           ))}
         </div>
+        <div className="mt-4 pt-4 border-t border-[rgba(245,240,232,0.08)] text-right">
+          <Link
+            href="/arms"
+            className="text-[var(--color-gold)] text-[9px] font-semibold tracking-[0.15em] uppercase
+                       hover:underline underline-offset-4"
+            tabIndex={isOpen ? undefined : -1}
+            {...(onClose ? { onClick: onClose } : {})}
+          >
+            View all 10 ARMs →
+          </Link>
+        </div>
       </div>
     </div>
   )
